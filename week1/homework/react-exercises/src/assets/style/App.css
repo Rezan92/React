@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+.services-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-end; */
+}

@@ -1,0 +1,15 @@
+.services-content {
+    width:30%;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #d6d6d6;
+  }
+
+  .services-content img {
+    height: 100px;
+  }
+
+  .services-content p {
+    color: #929292;
+    line-height: 1.5rem;
+  }
