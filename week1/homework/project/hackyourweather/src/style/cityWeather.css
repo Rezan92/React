@@ -1,0 +1,21 @@
+.city-container {
+  width: 350px;
+  margin: auto;
+  margin-bottom: 2rem;
+  text-align: left;
+  padding: 1rem;
+  border: 2px solid;
+  background: #6e7e9c;
+}
+
+.city-container h4,
+.weather-description {
+  margin: 0.2rem;
+}
+
+.city-container p {
+  margin-bottom: 0;
+}
+.weather-description {
+  margin-bottom: 1.5rem;
+}
