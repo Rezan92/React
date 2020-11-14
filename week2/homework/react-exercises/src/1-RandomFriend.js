@@ -39,7 +39,7 @@ const FriendProfile = ({ friend, content, setContent }) => {
             alt={`${name.title} ${name.first} ${name.last} image`}
           />
 
-          <h3 className="profile-name">{`${name.title} ${name.first} ${name.last}`}</h3>
+          <h3 className="profile-name">{`${name.title}. ${name.first} ${name.last}`}</h3>
 
           <div className="profile-content">
             {content !== "" && <p className="profile-text">{content}</p>}
