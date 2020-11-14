@@ -6,10 +6,13 @@ const DogPhoto = () => {
   const [dogPhotos, setDogPhotos] = useState([]);
 
   const getDogPhoto = async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setDogPhotos([...dogPhotos, data.message]);
-    console.log(dogPhotos);
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setDogPhotos([...dogPhotos, data.message]);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="dog-gallery">

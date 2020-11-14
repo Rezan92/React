@@ -8,10 +8,14 @@ const Friend = () => {
   const [content, setContent] = useState("");
 
   const getFriend = async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setFriend(data.results[0]);
-    setContent("");
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setFriend(data.results[0]);
+      setContent("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

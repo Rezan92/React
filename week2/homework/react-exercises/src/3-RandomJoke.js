@@ -3,9 +3,14 @@ const URL = "https://official-joke-api.appspot.com/random_joke";
 const RandomJoke = () => {
     const [joke, setJoke] = useState({});
 useEffect(async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setJoke(data);
+    try {
+        const response = await fetch(URL);
+        const data = await response.json();
+        setJoke(data);
+    } catch (error) {
+        console.log(error)
+    }
+   
 },[])
     return (
         <div className="joke-container">
@@ -16,7 +21,6 @@ useEffect(async () => {
 }
 
 const Joke = ({joke}) => {
-    console.log("FROM HERE",joke)
     return (
         <div>
             <p>{joke.setup?joke.setup:"loading..."}</p>
