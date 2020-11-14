@@ -1,5 +1,12 @@
+html {
+  background-color: #aaaaaa;
+}
 .App {
   text-align: center;
+}
+.friend-container{
+  background-color: #696969;
+  padding: 1rem;
 }
 
 .profile-container {
@@ -58,9 +65,7 @@
 }
 
 .dog-gallery {
-  margin-top: 3rem;
   padding: 1rem;
-  /* border-top: 3px solid black; */
   background-color: #818181;
 }
 
@@ -84,4 +89,9 @@
   width: 100%;
   height: 100%;
   vertical-align: middle;
+}
+
+.joke-container {
+  background-color: #a0a0a0;
+  padding: 1rem;
 }

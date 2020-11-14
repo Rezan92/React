@@ -15,7 +15,7 @@ const Friend = () => {
   };
 
   return (
-    <div>
+    <div className="friend-container">
       <FriendProfile
         friend={friend}
         content={content}

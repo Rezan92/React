@@ -24,7 +24,6 @@ const DogPhoto = () => {
 };
 
 const DogGallery = ({ dogPhoto }) => {
-  console.log(dogPhoto);
   return (
     <div className="dog-img-container">
       <img src={dogPhoto} alt="a dog image" />
