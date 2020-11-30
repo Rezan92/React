@@ -22,7 +22,6 @@ const CityWeatherContainer = () => {
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`
       );
       const data = await res.json();
-      setIsLoading(false);
       if (data.cod >= 400) {
         const error = new Error();
         error.data = data;
@@ -33,6 +32,8 @@ const CityWeatherContainer = () => {
       setIsLoading(false);
     } catch (err) {
       setIfError(err.data);
+    } finally {
+      setIsLoading(false);
     }
   };
 
