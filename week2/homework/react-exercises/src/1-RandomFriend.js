@@ -34,13 +34,13 @@ const FriendProfile = ({ friend, content, setContent }) => {
   const { name, picture, email, location, phone } = friend;
   return (
     <div>
-      {Object.keys(friend).length != 0 && (
+      {Object.keys(friend).length !== 0 && (
         <div className="profile-container">
 
           <img
             className="profile-image"
             src={picture.large}
-            alt={`${name.title} ${name.first} ${name.last} image`}
+            alt={`${name.title} ${name.first} ${name.last}`}
           />
 
           <h3 className="profile-name">{`${name.title}. ${name.first} ${name.last}`}</h3>

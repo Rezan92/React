@@ -4,22 +4,31 @@ const URL = "https://dog.ceo/api/breeds/image/random";
 
 const DogPhoto = () => {
   const [dogPhotos, setDogPhotos] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getDogPhoto = async () => {
     try {
+      setIsLoading(true);
       const response = await fetch(URL);
       const data = await response.json();
       setDogPhotos([...dogPhotos, data.message]);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsLoading(false);
     }
   };
   return (
     <div className="dog-gallery">
-      <div className="dog-gallert-container">
+      <div className="dog-gallery-container">
         {dogPhotos.map((dogPhoto, index) => {
           return <DogGallery key={index} dogPhoto={dogPhoto} />;
         })}
+        {isLoading && (
+          <div className="loading-container">
+            <div className="loading"></div>
+          </div>
+        )}
       </div>
       <Button getDogPhoto={getDogPhoto} dogPhotos={dogPhotos} />
     </div>
