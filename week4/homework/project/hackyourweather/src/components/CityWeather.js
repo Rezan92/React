@@ -23,25 +23,26 @@ const CityWeather = ({ cityWeather, handleDelete, index }) => {
       </h3>
       <div className="temp-icon_container">
         <img
+          className="temp-icon"
           src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
           alt={`${weatherSituation} icon`}
         />
-        <h3>{temp} °C</h3>
+        <h3 className="temp">{temp} °C</h3>
       </div>
       <div className="weather-info">
-        <h4>{weatherSituation}</h4>
+        <h4 className="weather-condition">{weatherSituation}</h4>
         <p className="weather-description">{description}</p>
         <p>
-          max temp: <span>{temp_max} °C</span>
+          max temp: <strong>{temp_max} °C</strong>
         </p>
         <p>
-          min temp: <span>{temp_min} °C</span>
+          min temp: <strong>{temp_min} °C</strong>
         </p>
         <p className="weather-location">
           location:{" "}
-          <span>
+          <strong>
             {lat}, {lon}
-          </span>
+          </strong>
         </p>
       </div>
     </div>
