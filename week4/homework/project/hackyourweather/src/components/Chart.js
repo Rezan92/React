@@ -19,21 +19,24 @@ const Chart = ({ match }) => {
   const id = match.params.id;
   const URL = `https://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&appid=${API_KEY}`;
 
-  useEffect(async () => {
-    try {
-      setIsLoading(true);
-      const res = await fetch(URL);
-      const data = await res.json();
-      setChart(data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setIsLoading(false);
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const res = await fetch(URL);
+        const data = await res.json();
+        setChart(data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
     return () => {
       setChart("");
     };
-  }, []);
+  }, [URL]);
 
   return (
     <>
